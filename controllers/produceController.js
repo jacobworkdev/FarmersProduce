@@ -1,5 +1,5 @@
 const Produce = require('../models/Produce.js')
-
+const mongoose = require('mongoose')
 exports.createProduce = async (req,res)=>{
     try{
         const {name,quantity,unit,price} = req.body
@@ -19,3 +19,26 @@ exports.getAllProduce = async (req,res)=>{
     res.json(produce)
 }
 
+exports.deleteProduce = async(req,res)=>{
+    try{
+        const {id} = req.params
+        const produce=await Produce.findById(id)
+
+        console.log(id)
+        if(!produce){
+            console.log(produce)
+            console.log(mongoose.Types.ObjectId.isValid(id))
+            return res.status(404).json({message:'produce not found'})
+        }
+
+        if(produce.farmer.toString()!== req.user.id){
+            return res.status(403).json({message:'unauthorized farmer-produce is posted by some other farmer'})
+        }
+
+        await produce.deleteOne()
+        res.json({message:'produce deleted successfully'})
+    }catch(error){
+        res.status(500).json({message:error.message})
+        console.log('error in delete produce controller')
+    }
+}
