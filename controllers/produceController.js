@@ -42,3 +42,17 @@ exports.deleteProduce = async(req,res)=>{
         console.log('error in delete produce controller')
     }
 }
+
+exports.getProduceById= async(req,res)=>{
+    try{
+        const {id}= req.params
+        const produce = await Produce.findById(id)
+        if(!produce){
+            return res.status(404).json({message:'product not found'})
+        }
+        res.status(200).json(produce)
+    }catch(error){
+        res.status(500).json({message:error.message})
+        console.log('error in getProduceById controller')
+    }
+}
