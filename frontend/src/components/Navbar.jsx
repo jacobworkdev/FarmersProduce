@@ -4,6 +4,7 @@ const { default: AuthContext } = require("../context/AuthContext")
 const Navbar = () =>{
     const{user,logout} = useContext(AuthContext)
 
+        //For reference*******
 
         //   <Route path='/' element={<Home />} />
         //   <Route path='/create-produce' element={<CreateProduce />} />
