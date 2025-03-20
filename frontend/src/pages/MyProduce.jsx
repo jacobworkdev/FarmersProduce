@@ -4,6 +4,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
 
+
 const MyProduce = () => {
     const [produce, setProduce] = useState([])
     const { token } = useContext(AuthContext)
@@ -46,12 +47,12 @@ const MyProduce = () => {
 
 
     return (
-        <div className="MyProducePage">
+        <div className="AllProduceHome">
             <h1>My Produce</h1>
             {produce.length === 0 ? (
                 <p>You have not added any produce yet.</p>
             ) : (
-                <div className="ProduceList">
+                <div className="AllProduceCardContainer">
                     {produce.map((item) => (
                         <div key={item._id} className="ProduceCard">
                             <h3>{item.name}</h3>

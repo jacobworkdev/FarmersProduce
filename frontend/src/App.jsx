@@ -6,6 +6,8 @@ import Register from './pages/Register.jsx'
 import MyProduce from './pages/MyProduce.jsx'
 import CreateProduce from './pages/CreateProduce.jsx'
 import EditProduce from './pages/EditProduce.jsx'
+import "./styles.css";
+
 function App() {
 
   return (

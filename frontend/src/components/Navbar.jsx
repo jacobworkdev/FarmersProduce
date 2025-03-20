@@ -15,13 +15,13 @@ const Navbar = () =>{
 
 
     return(
-        <nav>
+        <nav className="navbar">
             <Link to='/'>Home</Link>
             {user?(
                 <>
                 <Link to='/create-produce'>Create Produce</Link>
                 <Link to='/my-produce'>My produce</Link>
-                <button onClick={logout}>Logout</button>
+                <button className="logoutbtn" onClick={logout}>Logout</button>
                 </>
             ):(
                 <>

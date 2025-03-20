@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
 
+
 const EditProduce = () => {
     const { id } = useParams();
     const navigate = useNavigate();
