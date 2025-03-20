@@ -5,14 +5,14 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path='/' element ={<Home/>}/>
-          <Route path='/create-produce' element ={<CreateProduce />}/>
-          <Route path='/my-Produce' element ={< Myproduce/>}/>
-          <Route path='/edit-produce/:id' element ={<EditProduce />}/>
-          <Route path='/login' element ={< Login/>}/>
-          <Route path='/register' element ={<Register />}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/create-produce' element={<CreateProduce />} />
+          <Route path='/my-Produce' element={< Myproduce />} />
+          <Route path='/edit-produce/:id' element={<EditProduce />} />
+          <Route path='/login' element={< Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
 
       </Router>
