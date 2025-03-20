@@ -19,8 +19,10 @@ export const AuthProvider = ({ children }) => {
 
     const login = (userData, token) => {
         //save and set the local storage user variable equal to the logged in user id
-        localStorage.setItem(user, JSON.stringify(userData))
+        localStorage.setItem('user', JSON.stringify(userData))
         localStorage.setItem('token', token)
+        setUser(userData)
+        setToken(token)
     }
     const logout = () => {
         //remove the user id and the token from local storage
