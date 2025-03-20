@@ -1,12 +1,13 @@
 import { useState, useContext } from 'react'
 import AuthContext from "../context/AuthContext.jsx";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const Login = ()=>{
     const [formData,setFormData]= useState({email:'',password:''})
     const[message,setMessage] = useState('')
     const {login} = useContext(AuthContext)
-
+    const navigate=useNavigate()
     const handleChange=(e) =>{
         setFormData({...formData,[e.target.name]:e.target.value})
     }
@@ -20,6 +21,7 @@ const Login = ()=>{
             console.log(res)
             login(res.data.user,res.data.token)
             setMessage('Login Successfull!')
+            navigate('/my-Produce') // send the farmer to my produce page to list all of his own postings
         }catch(err){
             setMessage('Wrong credentials')
         }
