@@ -5,6 +5,7 @@ import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import MyProduce from './pages/MyProduce.jsx'
 import CreateProduce from './pages/CreateProduce.jsx'
+import EditProduce from './pages/EditProduce.jsx'
 function App() {
 
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/create-produce' element={<CreateProduce />} />
           <Route path='/my-Produce' element={< MyProduce />} />
-          {/* <Route path='/edit-produce/:id' element={<EditProduce />} /> */}
+          <Route path='/edit-produce/:id' element={<EditProduce />} />
           <Route path='/login' element={< Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
