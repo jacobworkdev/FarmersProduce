@@ -51,9 +51,13 @@ const EditProduce = () => {
         <div>
             <h2>Edit Produce</h2>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Produce Name:</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                <label htmlFor="quantity">Quantity:</label>
                 <input type="number" name="quantity" value={formData.quantity} onChange={handleChange} required />
+                <label htmlFor="unit">Unit (e.g., kg, lbs, dozen):</label>
                 <input type="text" name="unit" value={formData.unit} onChange={handleChange} required />
+                <label htmlFor="price">Price ($):</label>
                 <input type="number" name="price" value={formData.price} onChange={handleChange} required />
                 <button type="submit">Update Produce</button>
             </form>
