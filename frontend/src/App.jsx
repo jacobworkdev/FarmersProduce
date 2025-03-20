@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import MyProduce from './pages/MyProduce.jsx'
+import CreateProduce from './pages/CreateProduce.jsx'
 function App() {
 
   return (
@@ -12,7 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='/create-produce' element={<CreateProduce />} /> */}
+          <Route path='/create-produce' element={<CreateProduce />} />
           <Route path='/my-Produce' element={< MyProduce />} />
           {/* <Route path='/edit-produce/:id' element={<EditProduce />} /> */}
           <Route path='/login' element={< Login />} />
