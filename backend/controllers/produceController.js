@@ -89,3 +89,13 @@ exports.updateProduce = async (req, res) => {
         console.log('error in the produpdate controller')
     }
 }
+
+exports.getMyProduce = async (req, res) => {
+    try {
+
+        const produce = await Produce.find({farmer:req.user.id})
+        res.status(201).json(produce)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}

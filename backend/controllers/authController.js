@@ -20,16 +20,23 @@ exports.registerFarmer = async (req, res) => {
 }
 
 exports.loginFarmer = async (req, res) => {
-    try{
-        const {email,password} = req.body
-        const farmer = await Farmer.findOne({email})
+    try {
+        const { email, password } = req.body
+        const farmer = await Farmer.findOne({ email })
 
-        if(!farmer || !(await bcrypt.compare(password,farmer.password))){
-            return res.status(401).json({message:"invalid credentials"})
+        if (!farmer || !(await bcrypt.compare(password, farmer.password))) {
+            return res.status(401).json({ message: "invalid credentials" })
         }
-        res.json({token:generateToken(farmer._id)})
-    }catch(error){
-        res.status(500).json({message:error.message})
+        res.json({
+            user: {
+                id: farmer._id,
+                name: farmer.name,
+                email: farmer.email,
+            }, 
+            token: generateToken(farmer._id)
+        })
+    } catch (error) {
+        res.status(500).json({ message: error.message })
         console.log('error in auth controller login')
         console.log(error)
     }
