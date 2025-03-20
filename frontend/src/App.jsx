@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import MyProduce from './pages/MyProduce.jsx'
 function App() {
 
   return (
@@ -11,9 +12,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='/create-produce' element={<CreateProduce />} />
-          <Route path='/my-Produce' element={< Myproduce />} />
-          <Route path='/edit-produce/:id' element={<EditProduce />} /> */}
+          {/* <Route path='/create-produce' element={<CreateProduce />} /> */}
+          <Route path='/my-Produce' element={< MyProduce />} />
+          {/* <Route path='/edit-produce/:id' element={<EditProduce />} /> */}
           <Route path='/login' element={< Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

@@ -23,3 +23,5 @@ app.use('/api/produce',produceRoutes)
 app.listen(PORT,()=>{
     console.log("server is running on port 5000")
 })
+
+//    my produce route  /api/produce/myproduce
