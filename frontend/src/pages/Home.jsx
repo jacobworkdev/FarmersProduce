@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
+import API_BASE_URL from "../config";
 
 const Home = () => {
     const [produce, setProduce] = useState([])
     useEffect(() => {
         const fetchProduce = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/produce')
+                const res = await axios.get(`${API_BASE_URL}/api/produce`)
                 console.log(res.data)
                 setProduce(res.data)
             } catch (error) {

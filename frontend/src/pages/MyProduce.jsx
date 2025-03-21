@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import AuthContext from "../context/AuthContext"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 
 
@@ -16,7 +17,7 @@ const MyProduce = () => {
     useEffect(() => {
         const fetchMyProduce = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/produce/myproduce', {
+                const res = await axios.get(`${API_BASE_URL}/api/produce/myproduce`, {
                     headers: { Authorization: `Bearer ${token}` }
                 })
 
@@ -35,7 +36,7 @@ const MyProduce = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/produce/${id}`, {
+            await axios.delete(`${API_BASE_URL}/api/produce/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setProduce(produce.filter(item => item._id !== id));

@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
+import API_BASE_URL from "../config";
 
 const EditProduce = () => {
     const { id } = useParams();
@@ -53,7 +54,7 @@ const EditProduce = () => {
         }
 
         try {
-            await axios.put(`http://localhost:5000/api/produce/${id}`, formDataToSend, {
+            await axios.put(`${API_BASE_URL}/api/produce/${id}`, formDataToSend, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data", 

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-
+import API_BASE_URL from "../config"
 const CreateProduce = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -34,7 +34,7 @@ const CreateProduce = () => {
         const token = localStorage.getItem('token')
 
         try {
-            const res = await axios.post('http://localhost:5000/api/produce', data, {
+            const res = await axios.post(`${API_BASE_URL}/api/produce`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
